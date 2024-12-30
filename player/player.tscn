@@ -1,0 +1,73 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhrutww653eol"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_nf707"]
+[ext_resource type="Texture2D" uid="uid://83u1b3o5e77r" path="res://assets/player/down.png" id="2_5g6x8"]
+[ext_resource type="Texture2D" uid="uid://brmv76wjlleqn" path="res://assets/player/down_left_foot.png" id="3_cjx6w"]
+[ext_resource type="Texture2D" uid="uid://dfaoxivxwv4x1" path="res://assets/player/down_right_foot.png" id="4_wllqb"]
+[ext_resource type="Texture2D" uid="uid://ygtj3m0x8wp1" path="res://assets/player/right.png" id="5_302b2"]
+[ext_resource type="Texture2D" uid="uid://c6jqusioqrs2h" path="res://assets/player/right_left_foot.png" id="6_14wgn"]
+[ext_resource type="Texture2D" uid="uid://b7v5grngbgx5a" path="res://assets/player/right_right_foot.png" id="7_8h85h"]
+[ext_resource type="Texture2D" uid="uid://h4kkokfmiy5f" path="res://assets/player/up.png" id="8_fuki3"]
+[ext_resource type="Texture2D" uid="uid://bd62q1qvwf4yt" path="res://assets/player/up_left_foot.png" id="9_jvlpf"]
+[ext_resource type="Texture2D" uid="uid://duw3n1s0d8npq" path="res://assets/player/up_right_foot.png" id="10_vxcon"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_to2om"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5g6x8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cjx6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wllqb")
+}],
+"loop": true,
+"name": &"move_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_302b2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_14wgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8h85h")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_fuki3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jvlpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vxcon")
+}],
+"loop": true,
+"name": &"move_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pwjbs"]
+radius = 4.0
+height = 12.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_nf707")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_to2om")
+animation = &"move_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_pwjbs")
