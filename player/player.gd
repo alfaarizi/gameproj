@@ -14,7 +14,6 @@ var _input_action := ""
 @onready var _animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D
 
 func	 _ready() -> void:
-	print("hi")
 	scale = Vector2(4, 4)
 
 func _physics_process(_delta: float) -> void:
