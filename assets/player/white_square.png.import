@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6jqusioqrs2h"
-path="res://.godot/imported/right_left_foot.png-3a636e2caeccdabf27c6f4c3a5fe6aff.ctex"
+uid="uid://bdlasiu5spifl"
+path="res://.godot/imported/white_square.png-a9064e14a0dbc71ec9a850d8b93789f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/right_left_foot.png"
-dest_files=["res://.godot/imported/right_left_foot.png-3a636e2caeccdabf27c6f4c3a5fe6aff.ctex"]
+source_file="res://assets/player/white_square.png"
+dest_files=["res://.godot/imported/white_square.png-a9064e14a0dbc71ec9a850d8b93789f5.ctex"]
 
 [params]
 
