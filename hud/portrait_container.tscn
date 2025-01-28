@@ -1,0 +1,125 @@
+[gd_scene load_steps=4 format=3 uid="uid://dslndtd1pauyo"]
+
+[ext_resource type="Texture2D" uid="uid://bm0pikpbvy3i6" path="res://icon.svg" id="1_huqbm"]
+[ext_resource type="Theme" uid="uid://dkk0nnkkys24f" path="res://assets/hud/main_theme.tres" id="2_bdfee"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e37bd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="PortraitContainer" type="HBoxContainer"]
+custom_minimum_size = Vector2(1600, 435)
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.833
+anchor_bottom = 1.0
+offset_top = -435.0
+offset_right = 0.639648
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Portrait" type="VBoxContainer" parent="TextureRect"]
+custom_minimum_size = Vector2(435, 435)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.272
+anchor_bottom = 1.0
+offset_top = -435.0
+offset_right = -0.200012
+
+[node name="PotraitTexture" type="TextureRect" parent="TextureRect/Portrait"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_huqbm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Wellness" type="VBoxContainer" parent="TextureRect"]
+custom_minimum_size = Vector2(1165, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.784
+anchor_bottom = 1.0
+offset_left = 90.0
+offset_top = -125.0
+offset_right = 0.599976
+offset_bottom = -45.0
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/Wellness"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+bbcode_enabled = true
+text = "[b]RICH[/b]"
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/Wellness"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+
+[node name="PlayerHealthMargin" type="MarginContainer" parent="TextureRect/Wellness/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayerHealthPanel" type="Panel" parent="TextureRect/Wellness/VBoxContainer/PlayerHealthMargin"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e37bd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/Wellness/VBoxContainer/PlayerHealthMargin/PlayerHealthPanel"]
+layout_mode = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+
+[node name="PlayerHealthSlider" type="HSlider" parent="TextureRect/Wellness/VBoxContainer/PlayerHealthMargin/PlayerHealthPanel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource("2_bdfee")
+value = 50.0
+
+[node name="PlayerHealthLabel" type="RichTextLabel" parent="TextureRect/Wellness/VBoxContainer/PlayerHealthMargin/PlayerHealthPanel/HBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+text = "100/100"
+
+[node name="PlayerEnergyMargin" type="MarginContainer" parent="TextureRect/Wellness/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayerEnergyPanel" type="Panel" parent="TextureRect/Wellness/VBoxContainer/PlayerEnergyMargin"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e37bd")
+
+[node name="PlayerEnergyContainer" type="HBoxContainer" parent="TextureRect/Wellness/VBoxContainer/PlayerEnergyMargin/PlayerEnergyPanel"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.375
+offset_top = 9.0
+
+[node name="PlayerEnergySlider" type="HSlider" parent="TextureRect/Wellness/VBoxContainer/PlayerEnergyMargin/PlayerEnergyPanel/PlayerEnergyContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource("2_bdfee")
+value = 50.0
+
+[node name="PlayerEnergyLabel" type="RichTextLabel" parent="TextureRect/Wellness/VBoxContainer/PlayerEnergyMargin/PlayerEnergyPanel/PlayerEnergyContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+text = "100/100"

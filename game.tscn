@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqmjcjogbvf3r"]
+[gd_scene load_steps=7 format=3 uid="uid://cqmjcjogbvf3r"]
 
+[ext_resource type="Script" path="res://game.gd" id="1_0ggab"]
 [ext_resource type="PackedScene" uid="uid://bhrutww653eol" path="res://player/player.tscn" id="1_iewm3"]
+[ext_resource type="PackedScene" uid="uid://mwyfu135kouw" path="res://main_background.tscn" id="2_m66wo"]
+[ext_resource type="PackedScene" uid="uid://b64fcnx2pvmqq" path="res://building/test.tscn" id="3_ckxb2"]
+[ext_resource type="PackedScene" uid="uid://ce00minqlw3y7" path="res://hud/dialogue_box_in_use.tscn" id="4_r3ckn"]
+[ext_resource type="PackedScene" uid="uid://qrkrnqv83mlo" path="res://hud/hud.tscn" id="5_a5m7b"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -9,17 +14,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0ggab")
 
-[node name="Background" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.265028, 0.388968, 0.232389, 1)
+[node name="MainBackground" parent="." instance=ExtResource("2_m66wo")]
+layer = -1
+
+[node name="Node2D" parent="." instance=ExtResource("3_ckxb2")]
 
 [node name="Player" parent="." instance=ExtResource("1_iewm3")]
-position = Vector2(575, 311)
+unique_name_in_owner = true
+position = Vector2(-2, 1)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Hud" parent="Player/Camera2D" instance=ExtResource("5_a5m7b")]
+unique_name_in_owner = true
+
+[node name="DialogueBoxInUse" parent="Player/Camera2D" instance=ExtResource("4_r3ckn")]
+visible = false

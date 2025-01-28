@@ -1,0 +1,228 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjr6ohxpla21y"]
+
+[ext_resource type="Texture2D" uid="uid://dgrfruvxhyd3i" path="res://assets/hud/c1.png" id="1_j6pp3"]
+[ext_resource type="Script" path="res://hud/player_container.gd" id="1_tm6wp"]
+[ext_resource type="Texture2D" uid="uid://2xgn623g4hyc" path="res://assets/hud/c2.png" id="2_2vuy4"]
+[ext_resource type="Theme" uid="uid://dkk0nnkkys24f" path="res://assets/hud/main_theme.tres" id="4_a4nta"]
+[ext_resource type="Texture2D" uid="uid://dbwm0vtew4jpw" path="res://assets/hud/c3.png" id="4_myfec"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odbqf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="PlayerContainer" type="VBoxContainer"]
+custom_minimum_size = Vector2(480, 144)
+anchors_preset = -1
+anchor_right = 0.25
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_tm6wp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(480, 108)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_j6pp3")
+
+[node name="Profile" type="HBoxContainer" parent="TextureRect"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.225
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -9.00001
+offset_bottom = -9.0
+
+[node name="PlayerProfileTexture" type="TextureRect" parent="TextureRect/Profile"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_2vuy4")
+
+[node name="Wellness" type="VBoxContainer" parent="TextureRect"]
+custom_minimum_size = Vector2(363, 108)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.225
+anchor_right = 1.0
+offset_right = -9.0
+offset_bottom = 108.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/Wellness"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayerHealthPanel" type="Panel" parent="TextureRect/Wellness/VBoxContainer"]
+custom_minimum_size = Vector2(363, 52)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_odbqf")
+
+[node name="PlayerHealthSlider" type="HSlider" parent="TextureRect/Wellness/VBoxContainer/PlayerHealthPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_right = 1.0
+offset_top = 15.0
+offset_bottom = 31.0
+size_flags_vertical = 6
+theme = ExtResource("4_a4nta")
+theme_type_variation = &"HealthBar"
+value = 50.0
+
+[node name="PlayerEnergySlider" type="HSlider" parent="TextureRect/Wellness/VBoxContainer/PlayerHealthPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_right = 1.0
+offset_top = 45.0
+offset_bottom = 61.0
+size_flags_vertical = 6
+theme = ExtResource("4_a4nta")
+theme_type_variation = &"EnergyBar"
+value = 50.0
+
+[node name="PlayerStatusContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(480, 45)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="PlayerStatusContainer"]
+custom_minimum_size = Vector2(480, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 1
+
+[node name="Status1Texture" type="TextureRect" parent="PlayerStatusContainer/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+anchor_right = 0.094
+offset_right = -0.120003
+offset_bottom = 45.0
+size_flags_horizontal = 3
+texture = ExtResource("4_myfec")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Status2Texture" type="TextureRect" parent="PlayerStatusContainer/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+anchor_left = 0.1
+anchor_right = 0.194
+offset_right = -0.120003
+offset_bottom = 45.0
+size_flags_horizontal = 3
+texture = ExtResource("4_myfec")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Status3Texture" type="TextureRect" parent="PlayerStatusContainer/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+anchor_left = 0.2
+anchor_right = 0.294
+offset_right = -0.119995
+offset_bottom = 45.0
+size_flags_horizontal = 3
+texture = ExtResource("4_myfec")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Status4Texture" type="TextureRect" parent="PlayerStatusContainer/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+anchor_left = 0.3
+anchor_right = 0.394
+offset_right = -0.12001
+offset_bottom = 45.0
+size_flags_horizontal = 3
+texture = ExtResource("4_myfec")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Status5Texture" type="TextureRect" parent="PlayerStatusContainer/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+anchor_left = 0.4
+anchor_right = 0.494
+offset_right = -0.12001
+offset_bottom = 45.0
+size_flags_horizontal = 3
+texture = ExtResource("4_myfec")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Status6Texture" type="TextureRect" parent="PlayerStatusContainer/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+anchor_left = 0.5
+anchor_right = 0.594
+offset_right = -0.120026
+offset_bottom = 45.0
+size_flags_horizontal = 3
+texture = ExtResource("4_myfec")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Status7Texture" type="TextureRect" parent="PlayerStatusContainer/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+anchor_left = 0.6
+anchor_right = 0.694
+offset_right = -0.119995
+offset_bottom = 45.0
+size_flags_horizontal = 3
+texture = ExtResource("4_myfec")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Status8Texture" type="TextureRect" parent="PlayerStatusContainer/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+anchor_left = 0.7
+anchor_right = 0.794
+offset_left = -3.05176e-05
+offset_right = -0.120026
+offset_bottom = 45.0
+size_flags_horizontal = 3
+texture = ExtResource("4_myfec")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Status9Texture" type="TextureRect" parent="PlayerStatusContainer/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+anchor_left = 0.8
+anchor_right = 0.894
+offset_right = -0.120026
+offset_bottom = 45.0
+size_flags_horizontal = 3
+texture = ExtResource("4_myfec")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Status10Texture" type="TextureRect" parent="PlayerStatusContainer/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+anchor_left = 0.9
+anchor_right = 0.994
+offset_left = -3.05176e-05
+offset_right = -0.119995
+offset_bottom = 45.0
+size_flags_horizontal = 3
+texture = ExtResource("4_myfec")
+expand_mode = 1
+stretch_mode = 4
