@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqmjcjogbvf3r"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_0ggab"]
+[ext_resource type="PackedScene" uid="uid://bhrutww653eol" path="res://player/player.tscn" id="1_iewm3"]
+[ext_resource type="PackedScene" uid="uid://mwyfu135kouw" path="res://main_background.tscn" id="2_m66wo"]
+[ext_resource type="PackedScene" uid="uid://b64fcnx2pvmqq" path="res://assets/building/sample_building.tscn" id="3_ckxb2"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ggab")
+
+[node name="MainBackground" parent="." instance=ExtResource("2_m66wo")]
+layer = -1
+
+[node name="SampleBuilding" parent="." instance=ExtResource("3_ckxb2")]
+position = Vector2(0, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_iewm3")]
+unique_name_in_owner = true
+top_level = true
+position = Vector2(1000, 1000)

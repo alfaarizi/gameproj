@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bln04fcnkpha8"]
+
+[ext_resource type="PackedScene" uid="uid://qrkrnqv83mlo" path="res://ui/hud/hud.tscn" id="1_57it7"]
+[ext_resource type="Script" path="res://player/player_camera.gd" id="1_r0y7v"]
+[ext_resource type="PackedScene" uid="uid://byucwlac08hca" path="res://ui/dialogue/dialogue_hud.tscn" id="2_lh2xr"]
+
+[node name="PlayerCamera" type="Camera2D"]
+script = ExtResource("1_r0y7v")
+
+[node name="Hud" parent="." instance=ExtResource("1_57it7")]
+unique_name_in_owner = true
+
+[node name="DialogueHud" parent="." instance=ExtResource("2_lh2xr")]
+unique_name_in_owner = true
