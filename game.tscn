@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqmjcjogbvf3r"]
+[gd_scene load_steps=5 format=3 uid="uid://cqmjcjogbvf3r"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_0ggab"]
 [ext_resource type="PackedScene" uid="uid://bhrutww653eol" path="res://player/player.tscn" id="1_iewm3"]
 [ext_resource type="PackedScene" uid="uid://mwyfu135kouw" path="res://main_background.tscn" id="2_m66wo"]
-[ext_resource type="PackedScene" uid="uid://b64fcnx2pvmqq" path="res://building/test.tscn" id="3_ckxb2"]
-[ext_resource type="PackedScene" uid="uid://ce00minqlw3y7" path="res://hud/dialogue_box_in_use.tscn" id="4_r3ckn"]
-[ext_resource type="PackedScene" uid="uid://qrkrnqv83mlo" path="res://hud/hud.tscn" id="5_a5m7b"]
+[ext_resource type="PackedScene" uid="uid://b64fcnx2pvmqq" path="res://assets/building/sample_building.tscn" id="3_ckxb2"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -19,16 +17,10 @@ script = ExtResource("1_0ggab")
 [node name="MainBackground" parent="." instance=ExtResource("2_m66wo")]
 layer = -1
 
-[node name="Node2D" parent="." instance=ExtResource("3_ckxb2")]
+[node name="SampleBuilding" parent="." instance=ExtResource("3_ckxb2")]
+position = Vector2(0, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_iewm3")]
 unique_name_in_owner = true
-position = Vector2(-2, 1)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-
-[node name="Hud" parent="Player/Camera2D" instance=ExtResource("5_a5m7b")]
-unique_name_in_owner = true
-
-[node name="DialogueBoxInUse" parent="Player/Camera2D" instance=ExtResource("4_r3ckn")]
-visible = false
+top_level = true
+position = Vector2(1000, 1000)
